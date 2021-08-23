@@ -1,0 +1,23 @@
+package demo_test;
+
+
+	import org.testng.annotations.Test;
+
+    import static io.restassured.RestAssured.*;
+
+
+	public class jenkins_test_rest {
+ 
+			@Test
+			public void getAll() {
+				when()
+				.get("http://localhost:8080/job/DEMO_1-PIPELINE")
+				.then()
+				.assertThat().statusCode(200)
+				.and()
+				.log().all();
+				
+
+	}
+
+}
