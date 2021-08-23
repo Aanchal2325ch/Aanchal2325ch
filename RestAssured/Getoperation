@@ -1,4 +1,4 @@
-package demo_test;
+package rest_opeartions;
 
 
 	import org.testng.annotations.Test;
@@ -6,14 +6,13 @@ package demo_test;
     import static io.restassured.RestAssured.*;
 
 
-	public class jenkins_test_rest {
+	public class Get {
  
 			@Test
 			public void getAll() {
 				when()
-				.get("http://localhost:8080/job/DEMO_1-PIPELINE")
+				.get("http://localhost:8080/api/users/2")
 				.then()
-				.assertThat().statusCode(200)
 				.and()
 				.log().all();
 				
